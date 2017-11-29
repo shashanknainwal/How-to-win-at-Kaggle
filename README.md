@@ -1,6 +1,6 @@
 # Data Preprocessing
 
-## Scaling [0,1]
+## Scaling [0,1]- Tree based models dont depend on scaling. Non Tree models depend on scaling.
 
 
 from sklearn.preprocessing import MinMaxScaler
@@ -24,6 +24,12 @@ pd.Series(y).hist(bins=30)
 np.log(1+x)
 
 
+# FEATURE GENERATION
+. prior knowledge
+. EDA
+
+
+# CATEGORICAL AND ORDINAL FEATURES PREPROCESSING
 
 
 
