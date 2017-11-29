@@ -30,8 +30,10 @@ np.log(1+x)
 
 
 ## CATEGORICAL AND ORDINAL FEATURES PREPROCESSING
+Ordinal- categorical values that are sorted- for example: Ticket: 1,2,3. Ticket 1 is expensive where ticket 3 is cheap. But ticket 3-ticket 3 is not ticket 2
+Drivers license A,B,C,D
 
-
+## LABEL CODING- TREE BASED- YES
 
 
 
