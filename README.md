@@ -35,10 +35,33 @@ Drivers license A,B,C,D
 
 ## LABEL CODING- TREE BASED- YES
 
+## Bag of words( Post processing)
+from sklearn.feature_extraction.text import TfidfVectorizer
+vectorizer = TfidfVectorizer()
+vectorizer.fit_transform(corpus)
+  which means TF- termed frequency
+  
+  tf= 1/x.sum(axis=1)[:,None]
+  x=x*tf
+  IDF= Inverse document frequency
+  scales down high frequency words
+  
+## Text proprocessing( DO this first before BOW)
+1. Lowercase - Use count vectorizer-from sklearn.feature_extraction.text import CountVectorizer
+2. lemmitization
+3. Stemming
+I had a car and we have cars become I have a car and we have car
+Both L and S can achieve this.
+Saw becomes s by stemming
+Saw becomes see or saw by lemmitization depending upon context
 
-
-
-
+4. Stopwords
+words that dont contain useful info. Articles
+NLTK 
+CountVectorizer max_df
+## Word2vec
+Text<< vector
+https://rare-technologies.com/word2vec-tutorial/
 
 
 
