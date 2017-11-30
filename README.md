@@ -37,6 +37,20 @@ Ordinal- categorical values that are sorted- for example: Ticket: 1,2,3. Ticket 
 Drivers license A,B,C,D
 
 ## LABEL CODING- TREE BASED- YES
+# Save and drop labels
+y = train.y
+X = X.drop('y', axis=1)
+
+# fill NANs 
+X = X.fillna(-999)
+
+# Label encoder
+for c in train.columns[train.dtypes == 'object']:
+    X[c] = X[c].factorize()[0]
+    
+rf = RandomForestClassifier()
+rf.fit(X,y)
+
 
 ## Bag of words( Post processing)
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -69,8 +83,22 @@ https://rare-technologies.com/word2vec-tutorial/
 ## Exploratory Data Analysis - Week2
 
 
+### Plotting feature importance
+rf = random forest classifier
+plt.plot(rf.feature_importances_)
+plt.xticks(np.arrange(X.shape[1]),X.columns.tolist())
 
+Investigate the most important features
 
+1. plt.hist(n_bins=50)
+2. plt.scatter(x1,x2)
+3. df.corr(),plt.matshow()
+4. scatter matrix- pd.scatter_matrix(df)
+
+Removing duplicate columns
+df.T.drop_duplicates()
+
+Remove duplicate rows
 
 
 
