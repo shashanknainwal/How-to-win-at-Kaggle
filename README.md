@@ -63,6 +63,7 @@ CountVectorizer max_df
 Text<< vector
 https://rare-technologies.com/word2vec-tutorial/
 
+## Exploratory Data Analysis - Week2
 
 
 
