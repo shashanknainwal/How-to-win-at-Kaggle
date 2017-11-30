@@ -1,5 +1,8 @@
 # Data Preprocessing
 
+Good Notebook to review
+https://www.kaggle.com/kanncaa1/data-sciencetutorial-for-beginners/notebook
+
 ## Scaling [0,1]- Tree based models dont depend on scaling. Non Tree models depend on scaling.
 
 
