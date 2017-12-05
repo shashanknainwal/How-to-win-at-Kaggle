@@ -14,17 +14,86 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import MiniBatchKMeans
 import warnings
 warnings.filterwarnings('ignore')
-
+Create a dataframe - dirty way
+df = pd.DataFrame(np.random.randn(7, 3))
+data = pd.DataFrame(np.arange(12).reshape((3, 4)),index=['Ohio', 'Colorado', 'New York'], columns=['one', 'two', 'three', 'four'])
+............................................................................
 ## NA handling methods
 dropna Filter axis labels based on whether values for each label have missing data, with varying thresholds for how
 much missing data to tolerate.
 
+example: data.dropna(),data.dropna(how='all'), data.dropna(axis=1,how='all')
+
+
 fillna Fill in missing data with some value or using an interpolation method such as 'ffill' or 'bfill'.
+df.fillna(0)
+df.fillna(method='ffill')
+if data is a series, data.fillna(data.mean())
 
 isnull Return boolean values indicating which values are missing/NA.
 
 notnull Negation of isnull.
 
+..............................................................................................
+## Data Transformation
+
+1. To drop duplicates- df.drop_duplicates()
+2. ### Transforming Data Using a Function or Mapping
+data= 
+food    ounces
+0 bacon 4.0
+1 pulled pork 3.0
+2 bacon 12.0
+3 Pastrami 6.0
+4 corned beef 7.5
+5 Bacon 8.0
+6 pastrami 3.0
+7 honey ham 5.0
+8 nova lox 6.0
+
+meat_to_animal = {
+'bacon': 'pig',
+'pulled pork': 'pig',
+'pastrami': 'cow',
+'corned beef': 'cow',
+'honey ham': 'pig',
+'nova lox': 'salmon'
+}
+lowercased = data['food'].str.lower()
+data['animal'] = lowercased.map(meat_to_animal)
+data.index= data.index.map(transform)
+where transform= lambda x:x[4].upper()
+
+
+food ounces animal
+0 bacon 4.0 pig
+1 pulled pork 3.0 pig
+2 bacon 12.0 pig
+
+### ALternative
+data['food'].map(lambda x: meat_to_animal[x.lower()])
+
+
+
+## Replacing values
+If data is a dictionary 
+
+data.replace(-999, np.nan)
+data.replace([-999, -1000], np.nan)
+data.replace([-999, -1000], [np.nan, 0])
+data.replace({-999: np.nan, -1000: 0})
+
+
+
+
+
+
+
+
+
+
+
+........................................................................................
 
 Good Notebook to review
 https://www.kaggle.com/kanncaa1/data-sciencetutorial-for-beginners/notebook
