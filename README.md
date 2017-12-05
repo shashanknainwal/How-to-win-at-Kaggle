@@ -15,6 +15,17 @@ from sklearn.cluster import MiniBatchKMeans
 import warnings
 warnings.filterwarnings('ignore')
 
+## Argument Description
+dropna Filter axis labels based on whether values for each label have missing data, with varying thresholds for how
+much missing data to tolerate.
+
+fillna Fill in missing data with some value or using an interpolation method such as 'ffill' or 'bfill'.
+
+isnull Return boolean values indicating which values are missing/NA.
+
+notnull Negation of isnull.
+
+
 Good Notebook to review
 https://www.kaggle.com/kanncaa1/data-sciencetutorial-for-beginners/notebook
 
