@@ -15,7 +15,7 @@ from sklearn.cluster import MiniBatchKMeans
 import warnings
 warnings.filterwarnings('ignore')
 
-## Argument Description
+## NA handling methods
 dropna Filter axis labels based on whether values for each label have missing data, with varying thresholds for how
 much missing data to tolerate.
 
