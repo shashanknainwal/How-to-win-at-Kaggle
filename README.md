@@ -74,7 +74,6 @@ food ounces animal
 data['food'].map(lambda x: meat_to_animal[x.lower()])
 
 
-
 ## Replacing values
 If data is a dictionary 
 
@@ -82,6 +81,53 @@ data.replace(-999, np.nan)
 data.replace([-999, -1000], np.nan)
 data.replace([-999, -1000], [np.nan, 0])
 data.replace({-999: np.nan, -1000: 0})
+## Converting categorical to dummy
+   data1 key
+0      0   b
+1      1   b
+2      2   a
+3      3   c
+4      4   a
+5      5   b
+
+pd.get_dummies(df['key'])
+df_with_dummy = df[['data1']].join(dummies)
+
+........................................................................................
+movies
+
+movie_id title genres
+0 1 Toy Story (1995) Animation|Children's|Comedy
+1 2 Jumanji (1995) Adventure|Children's|Fantasy
+2 3 Grumpier Old Men (1995) Comedy|Romance
+3 4 Waiting to Exhale (1995) Comedy|Drama
+
+all_genres=[]
+for x in movies.genres:
+    all_genres.extend(x.split('|'))
+    
+genres= pd.unique(all_genres)
+
+o/p- array(['Animation', "Children's", 'Comedy', 'Adventure', 'Fantasy',
+'Romance', 'Drama', 'Action', 'Crime', 'Thriller', 'Horror',
+'Sci-Fi', 'Documentary', 'War', 'Musical', 'Mystery', 'Film-Noir',
+'Western'], dtype=object)
+.........................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
