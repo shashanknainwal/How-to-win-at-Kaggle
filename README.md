@@ -244,6 +244,23 @@ Remove duplicate rows
 
 
 
+# Working with Null
+age_is_null = pd.isnull(titanic_survival["age"])
+
+
+x=titanic_survival[age_is_null==False]
+
+correct_mean_age= x.mean()
+
+
+# Row index
+age = titanic_survival["age"]
+print(age.loc[10:20])
+# Pivot tables provide an easy way to subset by one column and then apply a calculation like a sum or a mean
+passenger_survival = titanic_survival.pivot_table(index="pclass", values="survived")
+
+
+
 
 
 
