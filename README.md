@@ -301,6 +301,55 @@ passenger_survival = titanic_survival.pivot_table(index="pclass", values="surviv
 1. we can type cd / to switch to the root directory.
 2.  We can check which user we're logged in as with the whoami command.
 3. cd ~ will automatically take us to the current user's home directory
+4. touch file.txt will create a new file called file.txt in the current directory
+5. nano test.txt will open the test.txt file for editing
+6. ls -1- list all files in directory
+7. ls -l (L) lists permission to access files
+8.update user permission
+chmod 0664 test.txt
+9. Move the files- mv test.txt /dq
+10. cp test.txt test2.txt
+11 rm test.txt will remove the test.txt file, for example, provided that it's in the current directory.
+
+12. echo $PATH will give full path location of current file
+13. ls --ignore=test.txt ignore any files with test.txt
+14. echo -e 'if __name__ == "__main__":\n    print("Welcome to a Python script")' > script.py this will create a file script.py and add welome to python statement to it
+15. python -V python version
+16. pip freeze what all packages are installed
+
+1. We can initialize a repository by typing git init inside the folder we want to use for our project
+
+2. add data to files
+
+3. git status
+git add script.py
+git add README.md
+4. git config --global user.email "your.email@domain.com"
+git config --global user.name "Dataquest User"
+5. git commit -m "Initial commit. Added script.py and README.md"
+6. git log command. This command will show us a list of all of the commits to the repository, in descending order by creation date.
+
+Example:
+cd into the /home/dq/chatbot folder to navigate to the chatbot repo.
+Add the line This project needs no installation to the bottom of README.md.
+Add your changes to the staging area using git add.
+Commit your changes using git commit, with the commit message Updated README.md.
+Run git status to see the status of the repo.
+
+Answers:
+cd /home/dq/chatbot
+printf "This project needs no installation" >> README.md
+git add .
+git commit -m "Updated README.md"
+git status
+git push origin master
+ git log
+ gt show
+ ....................................
+ 
+ 
+ 
+
 
 
 
