@@ -18,6 +18,12 @@ Create a dataframe - dirty way
 df = pd.DataFrame(np.random.randn(7, 3))
 data = pd.DataFrame(np.arange(12).reshape((3, 4)),index=['Ohio', 'Colorado', 'New York'], columns=['one', 'two', 'three', 'four'])
 ............................................................................
+
+# DATA SELECION
+In a general way, if you want to pick up the first N rows from the J column from pandas dataframe the best way to do this is:
+
+data = dataframe[0:N][:,J]
+...
 ## NA handling methods
 dropna Filter axis labels based on whether values for each label have missing data, with varying thresholds for how
 much missing data to tolerate.
