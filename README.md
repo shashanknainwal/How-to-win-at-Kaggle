@@ -34,6 +34,7 @@ isnull Return boolean values indicating which values are missing/NA.
 
 notnull Negation of isnull.
 
+
 ..............................................................................................
 ## Data Transformation
 
@@ -94,6 +95,10 @@ pd.get_dummies(df['key'])
 df_with_dummy = df[['data1']].join(dummies)
 
 ........................................................................................
+
+# Converting date  to datetime
+unrate['DATE'] = pd.to_datetime(unrate['DATE'])
+unrate['MONTH'] = unrate['DATE'].dt.month
 movies
 
 movie_id title genres
@@ -115,8 +120,27 @@ o/p- array(['Animation', "Children's", 'Comedy', 'Adventure', 'Fantasy',
 .........................................................................................
 
 
+# PLot
+PLotting multiple plots
+fig = plt.figure(figsize=(12,5))
+ax1 = fig.add_subplot(2,1,1)
+ax2 = fig.add_subplot(2,1,2)
+ax1.plot(unrate[0:12]['DATE'], unrate[0:12]['VALUE'])
+ax1.set_title('Monthly Unemployment Rate, 1948')
+ax2.plot(unrate[12:24]['DATE'], unrate[12:24]['VALUE'])
+ax2.set_title('Monthly Unemployment Rate, 1949')
+plt.show()
+ ## For loop alternative
+ fig = plt.figure(figsize=(12,12))
 
+for i in range(5):
+    ax = fig.add_subplot(5,1,i+1)
+    start_index = i*12
+    end_index = (i+1)*12
+    subset = unrate[start_index:end_index]
+    ax.plot(subset['DATE'], subset['VALUE'])
 
+plt.show()
 
 
 
