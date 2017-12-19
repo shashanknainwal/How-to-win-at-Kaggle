@@ -297,4 +297,15 @@ passenger_survival = titanic_survival.pivot_table(index="pclass", values="surviv
 
 
 
+# Command Line
+1. we can type cd / to switch to the root directory.
+2.  We can check which user we're logged in as with the whoami command.
+3. cd ~ will automatically take us to the current user's home directory
+
+
+
+
+
+
+
 
