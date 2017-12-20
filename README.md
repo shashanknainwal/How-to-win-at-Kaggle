@@ -494,3 +494,6 @@ cursor.execute(query2)
 five_results=cursor.fetchmany(5)
 
 conn.close()
+
+
+![README](4.jpg)
