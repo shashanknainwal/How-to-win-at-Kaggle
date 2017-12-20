@@ -366,7 +366,7 @@ dumps -- Takes in a Python object, and converts it to a string
 loads -- Takes a JSON string, and converts it to a Python object
  
 
-![README](C7qmC17.png.png)
+![README](C7qmC17.png)
 
 
 
