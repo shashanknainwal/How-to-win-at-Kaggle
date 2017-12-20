@@ -528,3 +528,33 @@ CREATE TABLE factbook.leaders(
    worth float,
    FOREIGN KEY(country) REFERENCES facts(id)
 );
+# Post gres
+
+import the psycopg2 library.
+Connect to the dq database with the user dq.
+Initialize a Cursor object from the connection.
+Use the print function to display the Cursor object.
+Close the Connection using the close method.
+
+import psycopg2
+conn = psycopg2.connect("dbname=dq user=dq")
+cur = conn.cursor()
+print(cur)
+conn.close()
+
+2. conn = psycopg2.connect("dbname=dq user=dq")
+cur = conn.cursor()
+cur.execute("SELECT * FROM notes;")
+2.b
+
+conn = psycopg2.connect("dbname=dq user=dq")
+cur = conn.cursor()
+cur.execute("CREATE TABLE notes(id integer PRIMARY KEY, body text, title text)")
+conn.close()
+
+
+We can issue SELECT queries against a database using the execute method, along with the fetchall and fetchone methods to retrieve results:
+
+cur.execute("SELECT * FROM notes;")
+rows = cur.fetchall()
+print(rows)
