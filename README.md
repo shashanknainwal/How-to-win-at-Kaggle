@@ -507,3 +507,17 @@ pd.read_sql_query(q3, conn)
 
 ![README](6.jpg)
 
+We can add a column with the ALTER TABLE statement:
+
+ALTER TABLE tableName
+ADD columnName dataType;
+
+ALTER TABLE tableName
+DROP COLUMN columnName;
+
+CREATE TABLE factbook.leaders(
+   id integer PRIMARY KEY,
+   name text,
+   country text
+);
+
