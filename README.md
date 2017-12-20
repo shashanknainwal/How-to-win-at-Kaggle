@@ -505,3 +505,5 @@ from facts
 '''
 pd.read_sql_query(q3, conn)
 
+![README](6.jpg)
+
