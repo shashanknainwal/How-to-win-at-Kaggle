@@ -368,6 +368,36 @@ loads -- Takes a JSON string, and converts it to a Python object
 
 ![README](C7qmC17.png)
 
+Python code
+from bs4 import BeautifulSoup
+
+# Initialize the parser, and pass in the content we grabbed earlier.
+parser = BeautifulSoup(content, 'html.parser')
+
+# Get the body tag from the document.
+# Since we passed in the top level of the document to the parser, we need to pick a branch off of the root.
+# With BeautifulSoup, we can access branches by using tag types as attributes.
+body = parser.body
+
+# Get the p tag from the body.
+p = body.p
+
+# Print the text inside the p tag.
+# Text is a property that gets the inside text of a tag.
+print(p.text)
+head = parser.head
+title= head.title
+title_text = title.text
+print(title_text)
+
+
+body = parser.find_all("body")
+
+# Get the paragraph tag.
+p = body[0].find_all("p")
+
+# Get the text.
+print(p[0].text)
 
 
 
