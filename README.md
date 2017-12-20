@@ -521,3 +521,10 @@ CREATE TABLE factbook.leaders(
    country text
 );
 
+CREATE TABLE factbook.leaders(
+   id integer PRIMARY KEY,
+   name text,
+   country integer,
+   worth float,
+   FOREIGN KEY(country) REFERENCES facts(id)
+);
