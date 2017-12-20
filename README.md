@@ -399,5 +399,21 @@ p = body[0].find_all("p")
 # Get the text.
 print(p[0].text)
 
+# Apply the find_all method to get the text inside the title tag, and assign the result to title_text.
 
+head = parser.find_all("head")
+title= head[0].find_all("title")
+title_text= title[0].text
+
+# Pass in the ID attribute to only get the element with that specific ID.
+first_paragraph = parser.find_all("p", id="first")[0]
+print(first_paragraph.text)
+
+
+![README](2.png)
+# Get the first inner paragraph.
+# Find all the paragraph tags with the class inner-text.
+# Then, take the first element in that list.
+first_inner_paragraph = parser.find_all("p", class_="inner-text")[0]
+print(first_inner_paragraph.text)
 
