@@ -497,3 +497,11 @@ conn.close()
 
 
 ![README](4.jpg)
+
+q3 = '''
+select min(population) min_pop, max(population) max_pop, 
+min(population_growth) min_pop_grwth, max(population_growth) max_pop_grwth 
+from facts
+'''
+pd.read_sql_query(q3, conn)
+
