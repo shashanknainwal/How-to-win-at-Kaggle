@@ -493,4 +493,4 @@ query2= "select Major,Major_category  from recent_grads;"
 cursor.execute(query2)
 five_results=cursor.fetchmany(5)
 
-
+conn.close()
